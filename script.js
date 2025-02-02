@@ -2,19 +2,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const user = { username: 'Mohamed Mokhtar', jobNumber: '903881' };
     const location = 'Current Location';
 
-    // Fill user data
+  
     document.getElementById('username').value = user.username;
     document.getElementById('jobNumber').value = user.jobNumber;
     document.getElementById('location').value = location;
 
-    // Update date and time automatically
+    
     function updateDateTime() {
         const now = new Date();
         const formattedDateTime = now.toLocaleDateString('en-US') + ' ' + now.toLocaleTimeString('en-US');
         document.getElementById('datetime').value = formattedDateTime;
     }
 
-    // Generate a unique report number based on work type and sector
+    
     function generateReportNumber() {
         const reportType = document.getElementById('reportType').value;
         const sector = document.getElementById('sector').value;
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Load dynamic templates based on selected work type
+    
     function loadTemplate() {
         const reportType = document.getElementById('reportType').value;
         const templateSection = document.getElementById('dynamicTemplates');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let templates = "";
 
-        // Maintenance templates (RM, PM, CM)
+        
         if (['RM', 'PM', 'CM'].includes(reportType)) {
             templates += `
                 <div class="template">
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
         }
 
-        // Requests (Req)
+        
         if (reportType === 'Req') {
             templates += `
                 <div class="template">
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
         }
 
-        // Emergency (E)
+        
         if (reportType === 'E') {
             templates += `
                 <div class="template">
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
         }
 
-        // Inspection (IP)
+        
         if (reportType === 'IP') {
             templates += `
                 <div class="template">
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
         templateSection.innerHTML = templates;
     }
 
-    // Add asset
+    
     window.addAsset = function () {
         const assetsList = document.getElementById('assetsList');
         const div = document.createElement('div');
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
         assetsList.appendChild(div);
     };
 
-    // Handle asset type change
+    
     window.handleAssetTypeChange = function (select) {
         const otherAssetDiv = select.parentElement.nextElementSibling;
         if (select.value === "Other") {
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Add workforce
+    
     window.addWorkforce = function () {
         const workforceList = document.getElementById('workforceList');
         const div = document.createElement('div');
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
         div.innerHTML = `
             <div class="workforce-entry">
                 <select onchange="handleWorkforceTypeChange(this)">
-                    <option value="">Choose Workforce Type</option>
+                    <option value="">Choose Employees Type</option>
                     <option value="Engineer">Engineer</option>
                     <option value="Supervisor">Supervisor</option>
                     <option value="Worker">Worker</option>
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <button class="remove-btn" onclick="this.parentElement.parentElement.remove()">-</button>
             </div>
             <div class="other-workforce" style="display: none;">
-                <input type="text" placeholder="Enter other workforce type">
+                <input type="text" placeholder="Enter other Employees type">
             </div>
         `;
         workforceList.appendChild(div);
