@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function () {
         workforceList.appendChild(div);
     };
 
-    // Handle workforce type change
+  
     window.handleWorkforceTypeChange = function (select) {
         const otherWorkforceDiv = select.parentElement.nextElementSibling;
         if (select.value === "Other") {
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Add equipment
+    
     window.addEquipment = function () {
         const equipmentList = document.getElementById('equipmentList');
         const div = document.createElement('div');
